@@ -22,8 +22,8 @@ public Plugin myinfo = {
 public void OnPluginStart()
 {
 	
-	CreateConVar("sm_disarm_version", "0.1", "The version of the SourceMod plugin MyJailBreak - ffa", FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY|FCVAR_DONTRECORD);
-	gc_bPlugin = CreateConVar("sm_disarm_enable", "1", "0 - disabled, 1 - enable FFA");
+	CreateConVar("sm_disarm_version", "0.1", "The version of the SourceMod plugin", FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY|FCVAR_DONTRECORD);
+	gc_bPlugin = CreateConVar("sm_disarm_enable", "1", "0 - disabled, 1 - enable plugin");
 	
 	
 	//Hooks
@@ -50,9 +50,10 @@ public Action Event_PlayerHurt(Handle event, char[] name, bool dontBroadcast)
 				CS_DropWeapon(victim, hClientWeapon, true, true);
 				PrintToChatAll("%N is disarmed %i", victim, hClientWeapon);
 				PrintHintText(victim, "Wounded to the arm! You lost your weapon!")
+				return Plugin_Stop;
 			}
 		}
 
 	}	
 		
-}		
+}
