@@ -49,7 +49,7 @@ public Action Event_PlayerHurt(Handle event, char[] name, bool dontBroadcast)
 			{
 				CS_DropWeapon(victim, hClientWeapon, true, true);
 				PrintToChatAll("%N is disarmed %i", victim, hClientWeapon);
-				PrintHintText(victim, "Wounded to the arm! You lost your weapon!")
+				PrintHintText(victim, "Wounded to the arm! You lost your weapon!");
 				return Plugin_Stop;
 			}
 		}
