@@ -53,7 +53,6 @@ public Action Event_PlayerHurt(Handle event, char[] name, bool dontBroadcast)
 				return Plugin_Stop;
 			}
 		}
-
-	}	
-		
+	}
+	return Plugin_Continue;
 }
